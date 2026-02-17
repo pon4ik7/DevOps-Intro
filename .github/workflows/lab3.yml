@@ -1,0 +1,21 @@
+name: Lab3 CI
+
+on:
+  push:
+    branches:
+      - main
+      - feature/lab3
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print basic info
+        run: |
+          echo "Hello from GitHub Actions!"
+          date
+          echo "Branch: $GITHUB_REF"
